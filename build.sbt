@@ -33,5 +33,7 @@ libraryDependencies ++= Seq(
 )
 
 // add kafka
+resolvers += "confluent" at "https://packages.confluent.io/maven/"
 libraryDependencies += "com.github.fd4s" %% "fs2-kafka" % "1.3.1"
-
+libraryDependencies += "com.github.fd4s" %% "fs2-kafka-vulcan" % "1.3.0"
+libraryDependencies += "com.github.fd4s" %% "vulcan" % "1.3.0"

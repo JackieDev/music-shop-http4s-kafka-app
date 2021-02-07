@@ -1,6 +1,8 @@
 package routes
 
-import cats.effect.Sync
+import java.util.UUID
+
+import cats.effect._
 import cats.implicits._
 import database._
 import models._
@@ -9,16 +11,19 @@ import io.circe.Json
 import io.circe.syntax._
 import org.http4s._
 import org.http4s.circe._
-
 import org.http4s.dsl.Http4sDsl
 
-class Routes[F[_]: Sync](repo: MusicProductRepository[F]) extends Http4sDsl[F] {
+class Routes[F[_]: Sync](repo: MusicProductRepository[F], kafkaProducer: (String, MusicProduct) => F[Unit]) extends Http4sDsl[F] {
 
   implicit def decodeProduct: EntityDecoder[F, MusicProduct] = jsonOf
 
 
   val routes: HttpRoutes[F] = HttpRoutes.of[F] {
     case GET -> Root / "status" =>
+      //trigger kafka producer here
+      //kafkaProducer(UUID.randomUUID().toString, MusicProduct(5, "Roland Go Keys Keyboard", "An electronic keyboard", "319.00 GBP", "keys")) *>
+        //kafkaProducer(UUID.randomUUID().toString, MusicProduct(6, "Yamaha Keyboard", "An electronic keyboard", "299.00 GBP", "keys")) *>
+        //kafkaProducer(UUID.randomUUID().toString, MusicProduct(7, "Korg Keyboard", "An electronic keyboard", "609.00 GBP", "keys")) *>
       Ok()
 
     // View all items in the products table
