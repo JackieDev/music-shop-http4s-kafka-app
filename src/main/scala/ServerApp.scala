@@ -24,17 +24,6 @@ object ServerApp extends IOApp {
 
 
   def run(args: List[String]): IO[ExitCode] = {
-//    stream.attempt.unsafeRunSync match {
-//      case Left(e) =>
-//        IO {
-//          println("*** An error occurred! ***")
-//          if (e ne null) {
-//            println(e.getMessage)
-//          }
-//          ExitCode.Error
-//        }
-//      case Right(r) => r.compile.drain.as(ExitCode.Success)
-//    }
     stream.compile.drain.as(ExitCode.Success)
   }
 
