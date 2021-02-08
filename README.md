@@ -30,7 +30,8 @@ Start up docker on your machine and open up a terminal inside of the cloned repo
 Then in another terminal also inside this cloned repo:
 `sbt run`
 
-Then in a browser or in postman hit `localhost:7000/status`
+Then in a browser or in postman hit `localhost:7000/status` and you should see some music
+instruments appear in your database in a table called products if you refresh it :)
 
 
 
