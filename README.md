@@ -13,7 +13,7 @@ Download kafka for Scala 2.13 from: https://www.apache.org/dyn/closer.cgi?path=/
 
 Clone this repo locally
 
-Install Postgres with a DB GUI application like DBeaver: https://dbeaver.io/
+Install Postgres and a DB GUI application like DBeaver: https://dbeaver.io/
 
 Create a postgres database:
 
