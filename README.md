@@ -20,12 +20,17 @@ Create a postgres database:
 `CREATE DATABASE musicshop`
 config is set here: https://github.com/JackieDev/music-shop-http4s-kafka-app/blob/main/src/main/resources/application.conf
 
+Uncomment these lines: https://github.com/JackieDev/music-shop-http4s-kafka-app/blob/main/src/main/scala/routes/Routes.scala#L24-L26
+
+
 ### Run
 Start up docker on your machine and open up a terminal inside of the cloned repo and type:
 `docker-compose -f docker-compose.yml up`
 
 Then in another terminal also inside this cloned repo:
 `sbt run`
+
+Then in a browser or in postman hit `localhost:7000/status`
 
 
 
